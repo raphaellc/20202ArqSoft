@@ -1,6 +1,6 @@
 # ArqSoft
 
 ![alt tag](home.png "login")
-![alt tag]("iPhone X, XS, 11 Pro – 3.png" "groups")
-![alt tag](iPhone X, XS, 11 Pro – 4.png "groupEvents")
-![alt tag](iPhone X, XS, 11 Pro – 5.png "home")
+![alt tag]("home2.png" "home")
+![alt tag](groups.png "groups")
+![alt tag](groupEvents.png "group events")
