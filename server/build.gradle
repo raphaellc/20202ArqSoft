@@ -1,0 +1,32 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.4.RELEASE'
+	id 'java'
+}
+
+group = 'br.unisinos'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation(enforcedPlatform("org.springframework.boot:spring-boot-dependencies:2.3.4.RELEASE"))
+	implementation(enforcedPlatform("org.testcontainers:testcontainers-bom:1.14.3"))
+
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	//Test dependencies
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+	testImplementation 'org.testcontainers:junit-jupiter'
+
+	runtimeOnly 'com.h2database:h2'//FIXME(Vinicius): Remover banco em memoria
+}
+
+test {
+	useJUnitPlatform()
+}
