@@ -9,55 +9,35 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import br.unisinos.getfut.enums.PosicaoEnum;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Builder
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@Getter
+@Setter
 @Entity
-@Table(name = "Jogadores")
+@Table(name = "Jogador")
 public class JogadorModel {
-    private Long id;
+    
+	@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
     private String nome;
     private ZonedDateTime dataNascimento;
     private String email;
-
-    protected JogadorModel() {
-    }
+    private int codPosicao;
 
     public JogadorModel(String nome, ZonedDateTime dataNascimento, String email) {
         this.nome = Objects.requireNonNull(nome);
         this.dataNascimento = Objects.requireNonNull(dataNascimento);
         this.email = Objects.requireNonNull(email);
-    }
-
-    void setId(Long id) {
-        this.id = id;
-    }
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    public Long getId() {
-        return id;
-    }
-
-    public String getNome() {
-        return this.nome;
-    }
-
-    void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public ZonedDateTime getDataNascimento() {
-        return this.dataNascimento;
-    }
-
-    void setDataNascimento(ZonedDateTime dataNascimento) {
-        this.dataNascimento = dataNascimento;
-    }
-
-    public String getEmail() {
-        return this.email;
-    }
-
-    void setEmail(String email) {
-        this.email = email;
     }
 
     @Override
@@ -68,5 +48,9 @@ public class JogadorModel {
                 .add("dataNascimento", dataNascimento)
                 .add("email", email)
                 .toString();
+    }
+    
+    public PosicaoEnum getPosicao() {
+		return PosicaoEnum.fromCodigo(codPosicao);
     }
 }
