@@ -1,7 +1,13 @@
 import React from 'react';
 import './Login.css';
+import { Link } from "react-router-dom";
 
 export default function Form() {
+    const logIn = ()=>{
+        console.log("entered")
+    }
+
+
     return (
         <form>
             <div className="login-field">
@@ -14,7 +20,11 @@ export default function Form() {
                 <input id="password" type="password" className="login-field-input"/>
             </div>
             
-            <button className="login-button"><b>Entrar</b></button>
+            <Link to="/home">
+                <button onClick={logIn} className="login-button">
+                    <b>Entrar</b>
+                </button>
+            </Link>
         </form>
     );
   }

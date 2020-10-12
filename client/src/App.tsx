@@ -1,16 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Login from './login/Login'
 import Home from './home/Home'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
 
 function App() {
   return (
-    <div className="App">
-      <Login/>
-      <Home/>
-      {/* <header className="App-header">
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route exact path="/">
+            <Login/>
+          </Route>
+          <Route path="/home">
+            <Home/>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
+
+
+
+/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
@@ -23,9 +43,4 @@ function App() {
         >
           Learn React
         </a>
-      </header> */}
-    </div>
-  );
-}
-
-export default App;
+      </header> */

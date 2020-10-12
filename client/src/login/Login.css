@@ -1,3 +1,12 @@
+.login-container {
+    height: 100vh; 
+    background-color: #82ffc3; 
+    display: flex; 
+    align-items: center;
+    flex-direction: column; 
+    justify-content: center;
+}
+
 .login-field {
     display: flex;
     padding: 15px; 
@@ -24,12 +33,19 @@
     width: 150px;
     height: 65px; 
     color: white;
+    font-family: Segoe UI, sans-serif;
+}
+
+.login-button:hover {
+    cursor: pointer;
+    background-color: #3e9487;
 }
 
 .login-logo {
     width: 200px;
     margin: 20px; 
-    color: #144445; 
+    color: #1b5a5c; 
     font-size:60px; 
     font-family: Segoe UI, sans-serif;
 }
+
