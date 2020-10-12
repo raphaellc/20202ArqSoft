@@ -1,0 +1,35 @@
+.login-field {
+    display: flex;
+    padding: 15px; 
+    flex-direction: column;  
+    align-items: flex-start;
+}
+
+.login-field-label {
+    margin: 5px 0px;
+    color:gray;
+}
+
+.login-field-input {
+    margin: 5px 0px;
+    border: 3px solid darkgray;
+    min-width: 200px; 
+    min-height: 20px;
+}
+
+.login-button {
+    margin: 30px; 
+    border: 0px;
+    background-color: #368587; 
+    width: 150px;
+    height: 65px; 
+    color: white;
+}
+
+.login-logo {
+    width: 200px;
+    margin: 20px; 
+    color: #144445; 
+    font-size:60px; 
+    font-family: Segoe UI, sans-serif;
+}

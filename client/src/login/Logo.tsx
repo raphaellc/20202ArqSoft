@@ -1,8 +1,8 @@
 import React from 'react';
-import './App.css';
+import './Login.css';
 
 export default function Logo() {
     return (
-      <></>
+      <div className="login-logo"><i>GetFut</i></div>
     );
   }
