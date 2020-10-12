@@ -1,4 +1,4 @@
-.login-container {
+.centralized-container {
     height: 100vh; 
     background-color: #82ffc3; 
     display: flex; 
@@ -27,7 +27,7 @@
 }
 
 .login-button {
-    margin: 30px; 
+    margin: 30px 30px 10px 30px; 
     border: 0px;
     background-color: #368587; 
     width: 150px;
@@ -39,6 +39,20 @@
 .login-button:hover {
     cursor: pointer;
     background-color: #3e9487;
+}
+
+.register-button {
+    border: 1px solid #368587;
+    background-color: #dfeced;
+    width: 150px;
+    height: 45px; 
+    color: #1b5a5c;
+    font-family: Segoe UI, sans-serif;
+}
+
+.register-button:hover {
+    cursor: pointer;
+    background-color: #bcc1c2;
 }
 
 .login-logo {

@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Login from './login/Login'
 import Home from './home/Home'
+import Registration from './registration/Registration'
 import {
   BrowserRouter as Router,
   Switch,
@@ -17,8 +18,13 @@ function App() {
           <Route exact path="/">
             <Login/>
           </Route>
+
           <Route path="/home">
             <Home/>
+          </Route>
+
+          <Route path="/register">
+            <Registration/>
           </Route>
         </Switch>
       </div>
