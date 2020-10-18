@@ -38,3 +38,12 @@
   flex-direction: column; 
   justify-content: center;
 }
+
+.white-container {
+  padding: 5%;
+  padding-top: 2%;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #c0ff9e;
+  box-shadow: 1px 1px 5px #888888;
+}

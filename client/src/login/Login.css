@@ -1,11 +1,4 @@
-.centralized-container {
-    height: 100vh; 
-    background-color: #82ffc3; 
-    display: flex; 
-    align-items: center;
-    flex-direction: column; 
-    justify-content: center;
-}
+
 
 .login-field {
     display: flex;
@@ -24,6 +17,13 @@
     border: 3px solid darkgray;
     min-width: 200px; 
     min-height: 20px;
+}
+
+.login-field-input-select {
+    margin: 5px 0px;
+    border: 3px solid darkgray;
+    min-width: 210px; 
+    min-height: 28px;
 }
 
 .login-button {

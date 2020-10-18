@@ -1,11 +1,11 @@
 import React from 'react';
 import '../App.css';
-import RegistrationForm from './RegistrationForm'
+import RegistrationContainer from './RegistrationContainer'
 
 export default function Registration() {
     return (
-      <div className="centralized-container">
-        <RegistrationForm/>
+      <div className="centralized-container" style={{backgroundColor:"#cef2e7"}}>
+        <RegistrationContainer/>
       </div>
     );
   }

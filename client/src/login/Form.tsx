@@ -38,7 +38,7 @@ export default function Form() {
     const history = useHistory();
 
 
-    const logIn = (event:SyntheticEvent )=>{
+    const logIn = (event:SyntheticEvent)=>{
         event.preventDefault()
 
         fetch(apiHost, {method: "POST", body: JSON.stringify(value), headers: {"Content-type": "application/json; charset=UTF-8"} })
@@ -66,12 +66,12 @@ export default function Form() {
         <form onSubmit={logIn}>
             <div className="login-field">
                 <label htmlFor ="email" className="login-field-label">Email:</label>
-                <input id="email" type="email" name="email" value={value.email} onChange={handleChange} className="login-field-input"/>
+                <input id="email" type="email" name="email" required value={value.email} onChange={handleChange} className="login-field-input"/>
             </div>
             
             <div className="login-field">
                 <label htmlFor ="password" className="login-field-label">Password:</label>
-                <input id="password" type="password" name="password" value={value.password} onChange={handleChange} className="login-field-input"/>
+                <input id="password" type="password" name="password" required value={value.password} onChange={handleChange} className="login-field-input"/>
             </div>
             
             <LoginButton/>
