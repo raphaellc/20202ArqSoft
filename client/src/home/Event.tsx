@@ -1,8 +1,16 @@
 import React from 'react';
 import '../App.css';
+import EventModel from '../models/Event'
 
-export default function Event() {
+interface EventProps {
+    event: EventModel
+}
+
+export default function Event({event}: EventProps) {
     return (
-        <div></div>
+        <div>
+            <div>{event.nome}</div>
+            <div>{event.local}</div>
+        </div>
     );
   }

@@ -1,8 +1,16 @@
 import React from 'react';
 import '../App.css';
+import EventModel from '../models/Event'
+import EventComponent from './Event'
 
-export default function EventsContainer() {
+interface EventsContainerProps {
+    events: EventModel[]
+}
+
+export default function EventsContainer({events}: EventsContainerProps) {
     return (
-        <div></div>
+        <div>
+            {events.map(event=>{<EventComponent event={event}/>})}
+        </div>
     );
   }

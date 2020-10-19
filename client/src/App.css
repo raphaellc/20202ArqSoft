@@ -47,3 +47,10 @@
   border: 1px solid #c0ff9e;
   box-shadow: 1px 1px 5px #888888;
 }
+
+#header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #cef2e7;
+}

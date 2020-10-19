@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import Login from './login/Login'
 import Home from './home/Home'
+import Header from './Header'
+import Groups from './groups/Groups'
 import Registration from './registration/Registration'
 import {
   BrowserRouter as Router,
@@ -19,12 +21,22 @@ function App() {
             <Login/>
           </Route>
 
-          <Route path="/home">
-            <Home/>
-          </Route>
-
           <Route path="/register">
             <Registration/>
+          </Route>
+
+          <Route path="/home">
+            <React.Fragment>
+              <Header path={"home"}/>
+              <Home/>
+            </React.Fragment>
+          </Route>
+
+          <Route path="/groups">
+            <React.Fragment>
+              <Header path={"home > groups"}/>
+              <Groups/>
+            </React.Fragment>
           </Route>
         </Switch>
       </div>
