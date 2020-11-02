@@ -1,0 +1,93 @@
+{
+    "user": {
+      "id": "1",
+      "nome": "Joao",
+      "email": "joao@hotmail.com",
+      "dataNascimento": "11-12-2000",
+      "codPosicao": "2"
+    },
+    "auth": {
+      "authorized": true,
+      "userId": 1
+    },
+    "events": [
+      {
+        "id": 1,
+        "nome": "evento 1",
+        "dthInicio": "2014-01-01T23:28:56.782Z",
+        "dthFim": "2014-01-01T23:28:56.782Z",
+        "donoEvento": {
+          "id": "1",
+          "nome": "Joao",
+          "email": "joao@hotmail.com",
+          "dataNascimento": "11-12-2000",
+          "codPosicao": "2"
+        },
+        "grupo": {
+          "players": []
+        },
+        "local": "string",
+        "presencas": [
+          {
+            "id": "1",
+            "nome": "Joao",
+            "email": "joao@hotmail.com",
+            "dataNascimento": "11-12-2000",
+            "codPosicao": "2"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "nome": "evento 1",
+        "dthInicio": "2014-01-01T23:28:56.782Z",
+        "dthFim": "2014-01-01T23:28:56.782Z",
+        "donoEvento": {
+          "id": "1",
+          "nome": "Joao",
+          "email": "joao@hotmail.com",
+          "dataNascimento": "11-12-2000",
+          "codPosicao": "2"
+        },
+        "grupo": {
+          "players": []
+        },
+        "local": "string",
+        "presencas": [
+          {
+            "id": "1",
+            "nome": "Joao",
+            "email": "joao@hotmail.com",
+            "dataNascimento": "11-12-2000",
+            "codPosicao": "2"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "nome": "evento 1",
+        "dthInicio": "2014-01-01T23:28:56.782Z",
+        "dthFim": "2014-01-01T23:28:56.782Z",
+        "donoEvento": {
+          "id": "1",
+          "nome": "Joao",
+          "email": "joao@hotmail.com",
+          "dataNascimento": "11-12-2000",
+          "codPosicao": "2"
+        },
+        "grupo": {
+          "players": []
+        },
+        "local": "string",
+        "presencas": [
+          {
+            "id": "1",
+            "nome": "Joao",
+            "email": "joao@hotmail.com",
+            "dataNascimento": "11-12-2000",
+            "codPosicao": "2"
+          }
+        ]
+      }
+    ]
+  }

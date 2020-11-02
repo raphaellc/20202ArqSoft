@@ -2,6 +2,6 @@ import Event from './Event'
 import User from './User'
 
 export default interface Group {
-    events: Event[],
+    events?: Event[],
     players: User[]
 }

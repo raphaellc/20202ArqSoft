@@ -4,8 +4,9 @@ import User from '../models/User'
 import EventsContainer from './EventsContainer'
 import Event from '../models/Event'
 
-const getUserById = "locahost:8080/users?id="
-const getEventsByPresenceUserId = "locahost:8080/events?presence="
+const getUserById = "http://localhost:8080/users?id="
+const getEventsByPresenceUserId = "http://localhost:8080/events?id="
+const getEventsByPresenceUserIdReal = "http://localhost:8080/events?presencas.id="
 
 export default function Home() {
     const [loggedUser, setLoggedUser] = useState<User>({
@@ -17,13 +18,16 @@ export default function Home() {
 
     const [events, setEvents] = useState<Event[]>([])
 
-    const userId = "123"
 
     useEffect(()=>{
+        const params = window.location.pathname.split("/")
+        const userId = params[params.length -1]
+
         fetch(getUserById + userId,{method: "GET"})
         .then(res=>res.json())
-        .then((res:Event[])=>{
-            setEvents(res)
+        .then((res:User)=>{
+            console.log(res)
+            setLoggedUser(res)
         })
         .catch(err=>{
             console.log(err)
@@ -31,8 +35,10 @@ export default function Home() {
         
         fetch(getEventsByPresenceUserId + userId,{method: "GET"})
         .then(res=>res.json())
-        .then(res=>{
-            setLoggedUser(res)
+        .then((res:Event[])=>{
+            console.log(res)
+            setEvents(res)
+            
         })
         .catch(err=>{
             console.log(err)

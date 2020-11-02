@@ -40,14 +40,15 @@ export default function Form() {
 
     const logIn = (event:SyntheticEvent)=>{
         event.preventDefault()
-
-        fetch(apiHost, {method: "POST", body: JSON.stringify(value), headers: {"Content-type": "application/json; charset=UTF-8"} })
+        //body: JSON.stringify(value), 
+        fetch(apiHost, {method: "GET", headers: {"Content-type": "application/json; charset=UTF-8"} })
         .then((res)=>res.json())
         .then((res:CredentialsResponse)=>{
             if(!!res && !!res.authorized){
                 history.push(`/home/${res.userId}`)
             } else {
                 console.log("unauthorized")
+                console.log(res)
                 //TODO: setup modal
             }
         })
