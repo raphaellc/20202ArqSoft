@@ -6,7 +6,8 @@ Iniciando client:
 3. npm start
 
 Mockando API:
-1. npx json-server ./src/mock-server.json --port 8080
+1. cd /client
+2. npx json-server ./src/mock-server.json --port 8080
 
 
 ![alt tag](home.png "login")
