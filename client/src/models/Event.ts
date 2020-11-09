@@ -8,6 +8,7 @@ export default interface Event {
     dthFim: Date,
     donoEvento:User,
 	grupo:Group,
+	times: Array<string>,
 	local:string,
 	presencas:User[]
 }

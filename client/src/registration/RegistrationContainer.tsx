@@ -4,7 +4,7 @@ import RegistrationForm from './RegistrationForm'
 
 export default function RegistrationContainer() {
     return (
-      <div className="white-container">
+      <div className="white-container-registration">
         <RegistrationForm/>
       </div>
     );

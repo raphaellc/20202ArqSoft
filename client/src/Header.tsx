@@ -23,7 +23,7 @@ function Menu(){
 
 function BreadCrumb({ path }: HeaderProps) {
     return (<div>
-            <p style={{fontFamily: "arial, sans-serif", fontSize:12, color:"darkgray", padding: 20}}>
+            <p style={{fontFamily: "Segoe UI, sans-serif", fontSize:12, color:"darkgray", padding: 20}}>
                 {path}
             </p>
         </div>)

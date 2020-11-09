@@ -1,5 +1,5 @@
 {
-    "user": {
+    "users": {
       "id": "1",
       "nome": "Joao",
       "email": "joao@hotmail.com",
@@ -14,8 +14,8 @@
       {
         "id": 1,
         "nome": "evento 1",
-        "dthInicio": "2014-01-01T23:28:56.782Z",
-        "dthFim": "2014-01-01T23:28:56.782Z",
+        "dthInicio": "2020-01-01T23:28:56.782Z",
+        "dthFim": "2020-01-01T23:28:56.782Z",
         "donoEvento": {
           "id": "1",
           "nome": "Joao",
@@ -24,9 +24,11 @@
           "codPosicao": "2"
         },
         "grupo": {
+          "nome": "Grupo A",
           "players": []
         },
-        "local": "string",
+        "times": ["Clube A", "Clube B"],
+        "local": "zona norte",
         "presencas": [
           {
             "id": "1",
@@ -38,10 +40,10 @@
         ]
       },
       {
-        "id": 2,
-        "nome": "evento 1",
-        "dthInicio": "2014-01-01T23:28:56.782Z",
-        "dthFim": "2014-01-01T23:28:56.782Z",
+        "id": 1,
+        "nome": "evento 2",
+        "dthInicio": "2020-01-01T23:28:56.782Z",
+        "dthFim": "2020-01-01T23:28:56.782Z",
         "donoEvento": {
           "id": "1",
           "nome": "Joao",
@@ -50,9 +52,11 @@
           "codPosicao": "2"
         },
         "grupo": {
+          "nome": "Grupo A",
           "players": []
         },
-        "local": "string",
+        "local": "Zona Sul",
+        "times": ["Vasco", "Fluminense"],
         "presencas": [
           {
             "id": "1",
@@ -64,10 +68,10 @@
         ]
       },
       {
-        "id": 2,
-        "nome": "evento 1",
-        "dthInicio": "2014-01-01T23:28:56.782Z",
-        "dthFim": "2014-01-01T23:28:56.782Z",
+        "id": 1,
+        "nome": "evento 3",
+        "dthInicio": "2020-01-01T23:28:56.782Z",
+        "dthFim": "2020-01-01T23:28:56.782Z",
         "donoEvento": {
           "id": "1",
           "nome": "Joao",
@@ -76,9 +80,11 @@
           "codPosicao": "2"
         },
         "grupo": {
+          "nome": "Grupo A",
           "players": []
         },
-        "local": "string",
+        "local": "Centro Histórico",
+        "times": ["ferroviario", "juventus"],
         "presencas": [
           {
             "id": "1",

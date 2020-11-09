@@ -9,9 +9,8 @@ interface EventsContainerProps {
 
 export default function EventsContainer({events}: EventsContainerProps) {
 
-
     return (
-        <div>
+        <div className="events-container">
             {events.length === 0 ? <></> : events.map((event, i)=><EventComponent key={i} event={event}/>)}
         </div>
     );

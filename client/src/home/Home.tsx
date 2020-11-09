@@ -8,6 +8,14 @@ const getUserById = "http://localhost:8080/users?id="
 const getEventsByPresenceUserId = "http://localhost:8080/events?id="
 const getEventsByPresenceUserIdReal = "http://localhost:8080/events?presencas.id="
 
+function HomeTitle() {
+    return (
+        <div style={{textAlign: "left", margin: "0px 30px"}}>
+            <h3 style={{fontFamily: "Segoe UI, sans-serif"}}>Seus próximos eventos:</h3>
+        </div>
+    )
+}
+
 export default function Home() {
     const [loggedUser, setLoggedUser] = useState<User>({
         nome: "",
@@ -46,8 +54,11 @@ export default function Home() {
     }, [])
 
     return (
-        <div className="centralized-container" style={{backgroundColor:"#cef2e7"}}>
-            <EventsContainer events={events}/>
+        <div style={{display: "flex", backgroundColor:"#cef2e7", flexDirection: "column"}}>
+            <HomeTitle />
+            <div className="centralized-container" style={{backgroundColor:"#cef2e7"}}>
+                <EventsContainer events={events}/>
+            </div>
         </div>
     );
   }

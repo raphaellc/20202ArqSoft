@@ -25,7 +25,7 @@ function RegisterButton() {
 }
 
 function RegistrationTitle() {
-  return <h1 style={{fontFamily: "Arial, sans-serif"}}>Cadastro de jogador</h1>
+  return <h1 style={{fontFamily: "Segoe UI, sans-serif"}}>Cadastro de jogador</h1>
 }
 
 
