@@ -8,10 +8,10 @@ const getUserById = "http://localhost:8080/users?id="
 const getEventsByPresenceUserId = "http://localhost:8080/events?id="
 const getEventsByPresenceUserIdReal = "http://localhost:8080/events?presencas.id="
 
-function HomeTitle() {
+function HomeTitle({events}: any) {
     return (
         <div style={{textAlign: "left", margin: "0px 30px"}}>
-            <h3 style={{fontFamily: "Segoe UI, sans-serif"}}>Seus próximos eventos:</h3>
+            <h3 style={{fontFamily: "Segoe UI, sans-serif"}}>{events.length > 0 ? "Seus próximos eventos" : "Nenhum evento marcado"}</h3>
         </div>
     )
 }
@@ -55,8 +55,8 @@ export default function Home() {
 
     return (
         <div style={{display: "flex", backgroundColor:"#cef2e7", flexDirection: "column"}}>
-            <HomeTitle />
-            <div className="centralized-container" style={{backgroundColor:"#cef2e7"}}>
+            <HomeTitle events={events}/>
+            <div className="left-aligned-container" style={{backgroundColor:"#cef2e7"}}>
                 <EventsContainer events={events}/>
             </div>
         </div>
