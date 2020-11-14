@@ -10,6 +10,8 @@ import br.unisinos.getfut.modelo.JogadorModel;
 @Repository
 public interface JogadorRepository extends CrudRepository<JogadorModel, Long> {
 
-    List<JogadorModel> findByNome(String nome);
+	List<JogadorModel> findByNome(String nome);
+
+	List<JogadorModel> findByEmail(String email);
 
 }

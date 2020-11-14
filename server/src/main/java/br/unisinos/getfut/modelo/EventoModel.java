@@ -7,6 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.MapKey;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.AccessLevel;
@@ -26,13 +30,16 @@ import lombok.Setter;
 public class EventoModel {
 
 	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String nome;
 	private ZonedDateTime dthInicio;
 	private ZonedDateTime dthFim;
+	@OneToOne
+	@JoinColumn(name = "jogador_id")
 	private JogadorModel donoEvento;
+	@OneToOne
+	@JoinColumn(name = "grupo_id")
 	private GrupoModel grupo;
 	private String local;
-	private List<PresencaModel> presencas;
 }
