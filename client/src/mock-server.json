@@ -1,0 +1,99 @@
+{
+    "users": {
+      "id": "1",
+      "nome": "Joao",
+      "email": "joao@hotmail.com",
+      "dataNascimento": "11-12-2000",
+      "codPosicao": "2"
+    },
+    "auth": {
+      "authorized": true,
+      "userId": 1
+    },
+    "events": [
+      {
+        "id": 1,
+        "nome": "evento 1",
+        "dthInicio": "2021-01-01T23:28:56.782Z",
+        "dthFim": "2021-01-01T23:28:56.782Z",
+        "donoEvento": {
+          "id": "1",
+          "nome": "Joao",
+          "email": "joao@hotmail.com",
+          "dataNascimento": "11-12-2000",
+          "codPosicao": "2"
+        },
+        "grupo": {
+          "nome": "Grupo A",
+          "players": []
+        },
+        "times": ["Clube A", "Clube B"],
+        "local": "zona norte",
+        "presencas": [
+          {
+            "id": "1",
+            "nome": "Joao",
+            "email": "joao@hotmail.com",
+            "dataNascimento": "11-12-2000",
+            "codPosicao": "2"
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "nome": "evento 2",
+        "dthInicio": "2020-11-14T23:28:56.782Z",
+        "dthFim": "2021-01-01T23:28:56.782Z",
+        "donoEvento": {
+          "id": "1",
+          "nome": "Joao",
+          "email": "joao@hotmail.com",
+          "dataNascimento": "11-12-2000",
+          "codPosicao": "2"
+        },
+        "grupo": {
+          "nome": "Grupo A",
+          "players": []
+        },
+        "local": "Zona Sul",
+        "times": ["Vasco", "Fluminense"],
+        "presencas": [
+          {
+            "id": "1",
+            "nome": "Joao",
+            "email": "joao@hotmail.com",
+            "dataNascimento": "11-12-2000",
+            "codPosicao": "2"
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "nome": "evento 3",
+        "dthInicio": "2021-01-01T23:28:56.782Z",
+        "dthFim": "2021-01-01T23:28:56.782Z",
+        "donoEvento": {
+          "id": "1",
+          "nome": "Joao",
+          "email": "joao@hotmail.com",
+          "dataNascimento": "11-12-2000",
+          "codPosicao": "2"
+        },
+        "grupo": {
+          "nome": "Grupo A",
+          "players": []
+        },
+        "local": "Centro Histórico",
+        "times": ["ferroviario", "juventus"],
+        "presencas": [
+          {
+            "id": "1",
+            "nome": "Joao",
+            "email": "joao@hotmail.com",
+            "dataNascimento": "11-12-2000",
+            "codPosicao": "2"
+          }
+        ]
+      }
+    ]
+  }

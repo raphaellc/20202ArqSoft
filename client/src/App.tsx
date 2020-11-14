@@ -1,11 +1,54 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Login from './login/Login'
+import Home from './home/Home'
+import Header from './Header'
+import Groups from './groups/Groups'
+import Registration from './registration/Registration'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route exact path="/">
+            <Login/>
+          </Route>
+
+          <Route path="/register">
+            <Registration/>
+          </Route>
+
+          <Route path="/home">
+            <React.Fragment>
+              <Header path={"home"}/>
+              <Home/>
+            </React.Fragment>
+          </Route>
+
+          <Route path="/groups">
+            <React.Fragment>
+              <Header path={"home > groups"}/>
+              <Groups/>
+            </React.Fragment>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
+
+
+
+/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
@@ -18,9 +61,4 @@ function App() {
         >
           Learn React
         </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
+      </header> */

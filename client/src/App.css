@@ -28,11 +28,93 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.centralized-container {
+  height: 100vh; 
+  background-color: #82ffc3; 
+  display: flex; 
+  align-items: center;
+  flex-direction: column; 
+  justify-content: center;
+}
+
+.left-aligned-container {
+  min-height: 100vh; 
+  background-color: #82ffc3; 
+  display: flex; 
+  flex-direction: column;
+  padding: 0px 0px; 
+  margin: 30px;
+  min-width: 200px; 
+  align-items: flex-start;
+}
+
+.event-dates-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.events-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+
+
+.white-container-card {
+  margin: 10px;
+  padding: 30px;
+  padding-top: 20px;
+  background-color: white;
+  border-radius: 10px;
+  border: 2px solid #c0ff9e;
+  box-shadow: 1px 1px 5px #888888;
+}
+
+@media only screen 
+and (min-device-width: 320px) 
+and (max-device-width: 480px) {
+  .white-container-card {
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+#white-container-card-section-spaced {
+  padding: 5px 0px; 
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between;
+}
+
+#white-container-card-section-leftAligned {
+  padding: 15px 0px 5px 0px;
+  display:flex;
+  flex-direction: row; 
+  justify-content: flex-start;
+}
+
+.white-container-card-item {
+  font-family: Segoe UI, sans-serif; 
+  text-align: left;
+}
+
+
+.white-container-registration {
+  padding: 5%;
+  padding-top: 2%;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #c0ff9e;
+  box-shadow: 1px 1px 5px #888888;
+}
+
+#header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #cef2e7;
 }
