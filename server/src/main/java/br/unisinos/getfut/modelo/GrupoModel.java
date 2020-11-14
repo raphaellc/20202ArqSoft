@@ -23,13 +23,12 @@ import lombok.Setter;
 @Entity
 @Table(name = "Grupo")
 public class GrupoModel {
-	
+
 	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String nome;
 	private String local;
 	private Integer diaSemana;
-	private List<JogadorModel> jogadores;
-	
+
 }
