@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
+import userIcon from './assets/person_110935.svg'
+import menu from './assets/lines_menu_burger_icon_123889.svg'
 
 interface HeaderProps {
     path: string
 }
 
 
-function Menu(){
+function Menu() {
     function expandMenu(){
         console.log("expanding menu")
     }
@@ -15,9 +17,10 @@ function Menu(){
         console.log("expanding user options")
     }
 
-    return(<div>
-            <div onClick={expandMenu}>M</div>
-            <div onClick={expandUserOptions}>H</div>
+    return (
+        <div style={{display: "flex", flexDirection: "row", padding: 10}}>
+            <div style={{padding: 10}} onClick={expandMenu}><img src={menu} style={{heigth:40, width:40}}/></div>
+            <div style={{padding: 10}} onClick={expandUserOptions}><img src={userIcon} style={{heigth:40, width:40}}/></div>
         </div>)
 }
 
