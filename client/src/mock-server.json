@@ -1,23 +1,23 @@
 {
     "users": {
-      "id": "1",
+      "id": 1,
       "nome": "Joao",
       "email": "joao@hotmail.com",
       "dataNascimento": "11-12-2000",
-      "codPosicao": "2"
+      "codPosicao": 2
     },
     "auth": {
-      "authorized": true,
-      "userId": 1
+      "autorizado": true,
+      "id": 1
     },
-    "events": [
+    "eventos": [
       {
         "id": 1,
         "nome": "evento 1",
         "dthInicio": "2021-01-01T23:28:56.782Z",
         "dthFim": "2021-01-01T23:28:56.782Z",
         "donoEvento": {
-          "id": "1",
+          "id": 1,
           "nome": "Joao",
           "email": "joao@hotmail.com",
           "dataNascimento": "11-12-2000",
@@ -31,7 +31,7 @@
         "local": "zona norte",
         "presencas": [
           {
-            "id": "1",
+            "id": 1,
             "nome": "Joao",
             "email": "joao@hotmail.com",
             "dataNascimento": "11-12-2000",
@@ -45,7 +45,7 @@
         "dthInicio": "2020-11-14T23:28:56.782Z",
         "dthFim": "2021-01-01T23:28:56.782Z",
         "donoEvento": {
-          "id": "1",
+          "id": 1,
           "nome": "Joao",
           "email": "joao@hotmail.com",
           "dataNascimento": "11-12-2000",
@@ -59,7 +59,7 @@
         "times": ["Vasco", "Fluminense"],
         "presencas": [
           {
-            "id": "1",
+            "id": 1,
             "nome": "Joao",
             "email": "joao@hotmail.com",
             "dataNascimento": "11-12-2000",
@@ -73,7 +73,7 @@
         "dthInicio": "2021-01-01T23:28:56.782Z",
         "dthFim": "2021-01-01T23:28:56.782Z",
         "donoEvento": {
-          "id": "1",
+          "id": 1,
           "nome": "Joao",
           "email": "joao@hotmail.com",
           "dataNascimento": "11-12-2000",
@@ -87,7 +87,7 @@
         "times": ["ferroviario", "juventus"],
         "presencas": [
           {
-            "id": "1",
+            "id": 1,
             "nome": "Joao",
             "email": "joao@hotmail.com",
             "dataNascimento": "11-12-2000",

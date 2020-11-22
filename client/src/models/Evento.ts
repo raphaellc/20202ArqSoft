@@ -1,5 +1,5 @@
-import User from './User'
-import Group from './Group'
+import User from './Jogador'
+import Group from './Grupo'
 
 export default interface Event {
 	id: number,

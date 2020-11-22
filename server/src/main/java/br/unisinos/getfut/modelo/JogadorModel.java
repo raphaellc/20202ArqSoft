@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 import br.unisinos.getfut.enums.PosicaoEnum;
 import lombok.AccessLevel;
@@ -22,12 +21,11 @@ import lombok.Setter;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Getter
 @Setter
-@Entity
-@Table(name = "Jogador")
+@Entity(name = "Jogador")
 public class JogadorModel {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
 	private ZonedDateTime dataNascimento;
@@ -39,12 +37,6 @@ public class JogadorModel {
 		this.nome = Objects.requireNonNull(nome);
 		this.dataNascimento = Objects.requireNonNull(dataNascimento);
 		this.email = Objects.requireNonNull(email);
-	}
-
-	@Override
-	public String toString() {
-		return com.google.common.base.MoreObjects.toStringHelper(this).add("id", id).add("nome", nome)
-				.add("dataNascimento", dataNascimento).add("email", email).toString();
 	}
 
 	public PosicaoEnum getPosicao() {

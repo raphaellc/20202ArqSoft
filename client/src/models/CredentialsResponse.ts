@@ -1,4 +1,4 @@
 export default interface CredentialsResponse {
-    authorized: boolean,
-    userId: number
+    autorizado: boolean,
+    id: number
 }

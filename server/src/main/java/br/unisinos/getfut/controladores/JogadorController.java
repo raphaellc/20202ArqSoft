@@ -1,28 +1,35 @@
 package br.unisinos.getfut.controladores;
 
+import br.unisinos.getfut.modelo.JogadorAuth;
 import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import br.unisinos.getfut.modelo.JogadorModel;
 import br.unisinos.getfut.service.JogadorService;
 
-@Component
 @RestController
-@RequestMapping("/jogador")
 public class JogadorController {
 
 	@Autowired
 	private JogadorService jogadorService;
 
-	@RequestMapping(method = RequestMethod.PUT)
-	public JogadorModel incluirConta(@RequestParam("email") String email, @RequestParam("senha") String senha,
-			@RequestParam("nome") String nome) {
-		return jogadorService.incluir(email, nome, senha);
+	/*TODO: find jogador by id: http://localhost:8080/jogador?id=*/
+
+
+	@PostMapping("/jogador")
+	public JogadorModel incluirConta(@RequestBody() JogadorModel jogador) {
+		return jogadorService.incluir(jogador.getEmail(), jogador.getNome(), jogador.getSenha());
+	}
+
+	@PostMapping("/jogador/login")
+	public JogadorAuth autorizarConta(@RequestBody() JogadorModel jogador) {
+		/*TODO: find jogador by email e senha*/
+		JogadorModel jogadorReturn = jogadorService.incluir(jogador.getEmail(), null, jogador.getSenha());
+		JogadorAuth auth = new JogadorAuth();
+		auth.setId(jogadorReturn.getId());
+		auth.setAutorizado(true);
+		return auth;
 	}
 
 }

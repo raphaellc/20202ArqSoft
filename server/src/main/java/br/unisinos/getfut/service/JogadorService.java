@@ -1,9 +1,10 @@
 package br.unisinos.getfut.service;
 
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
-import org.apache.commons.lang3.StringUtils;
 
 import br.unisinos.getfut.modelo.JogadorModel;
 import br.unisinos.getfut.repositorios.JogadorRepository;
@@ -12,6 +13,12 @@ import br.unisinos.getfut.repositorios.JogadorRepository;
 public class JogadorService {
 
 	private JogadorRepository jogadorRepository;
+
+	@Autowired
+	public JogadorService(JogadorRepository jogadorRepository) {
+		super();
+		this.jogadorRepository = jogadorRepository;
+	}
 
 	public JogadorModel incluir(String email, String nome, String senha) {
 		if (StringUtils.isBlank(email) || StringUtils.isBlank(nome) || StringUtils.isBlank(senha)) {

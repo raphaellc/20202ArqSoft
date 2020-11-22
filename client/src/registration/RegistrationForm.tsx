@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './Registration.css';
-import User from '../models/User'
+import User from '../models/Jogador'
 import { SyntheticEvent, useState } from 'react';
 import '../login/Login.css'
 import './Registration.css'
@@ -9,7 +9,7 @@ import { useHistory } from "react-router-dom";
 
 
 //todo: define profiles
-const apiHost:string = "http://localhost:8080/user"
+const apiHost:string = "http://localhost:8080/jogador"
 
 
 function RegisterButton() {
@@ -34,9 +34,9 @@ export default function RegistrationForm() {
   const [value, setValue] = useState<User>({
     nome:"",
     email: "",
-    password:"",
+    senha:"",
     dataNascimento: new Date(),
-    codPosicao:"0"
+    codPosicao:0
   })
 
   const history = useHistory()
@@ -82,18 +82,18 @@ export default function RegistrationForm() {
           
           <div style={{ display: "flex", flexDirection: "row", alignItems: "flex-start"}}>
             <div className="login-field">
-                <label htmlFor ="password" className="login-field-label">Password:</label>
-                <input id="password" type="password" name="password" required value={value.password} onChange={handleChange} className="login-field-input"/>
+                <label htmlFor ="senha" className="login-field-label">Password:</label>
+                <input id="senha" type="password" name="senha" required value={value.senha} onChange={handleChange} className="login-field-input"/>
             </div>
             <div className="login-field">
                 <label htmlFor ="codPosicao" className="login-field-label">Posição:</label>
                 <select id="codPosicao" name="codPosicao" value={value.codPosicao} onChange={handleChangeSelect} className="login-field-input-select">
-                  <option value="0">Atacante</option>
-                  <option value="1">Meio campo</option>
-                  <option value="2">Lateral</option>
-                  <option value="3">Volante</option>
-                  <option value="4">Zagueiro</option>
-                  <option value="5">Goleiro</option>
+                  <option value={0}>Atacante</option>
+                  <option value={1}>Meio campo</option>
+                  <option value={2}>Lateral</option>
+                  <option value={3}>Volante</option>
+                  <option value={4}>Zagueiro</option>
+                  <option value={5}>Goleiro</option>
                 </select>
             </div>
           </div>

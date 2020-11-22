@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import '../App.css';
-import User from '../models/User'
+import User from '../models/Jogador'
 import EventsContainer from './EventsContainer'
-import Event from '../models/Event'
+import Event from '../models/Evento'
 
-const getUserById = "http://localhost:8080/users?id="
-const getEventsByPresenceUserId = "http://localhost:8080/events?id="
-const getEventsByPresenceUserIdReal = "http://localhost:8080/events?presencas.id="
+const getUserById = "http://localhost:8080/jogador?id="
+const getEventsByPresenceUserId = "http://localhost:8080/eventos?id="
+const getEventsByPresenceUserIdReal = "http://localhost:8080/events?donoEvento="
 
 function HomeTitle({events}: any) {
     return (
@@ -21,7 +21,7 @@ export default function Home() {
         nome: "",
         email: "",
         dataNascimento:new Date,
-        codPosicao: "0"
+        codPosicao: 0
     })
 
     const [events, setEvents] = useState<Event[]>([])
@@ -44,6 +44,7 @@ export default function Home() {
         fetch(getEventsByPresenceUserId + userId,{method: "GET"})
         .then(res=>res.json())
         .then((res:Event[])=>{
+            console.log("Events found: ")
             console.log(res)
             setEvents(res)
             

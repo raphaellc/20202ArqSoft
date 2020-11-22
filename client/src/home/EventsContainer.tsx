@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../App.css';
-import EventModel from '../models/Event'
+import EventModel from '../models/Evento'
 import EventComponent from './Event'
 
 interface EventsContainerProps {

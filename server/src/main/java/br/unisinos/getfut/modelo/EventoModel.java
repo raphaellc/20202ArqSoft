@@ -1,17 +1,14 @@
 package br.unisinos.getfut.modelo;
 
+import java.io.Serializable;
 import java.time.ZonedDateTime;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.MapKey;
 import javax.persistence.OneToOne;
-import javax.persistence.Table;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -25,21 +22,22 @@ import lombok.Setter;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Getter
 @Setter
-@Entity
-@Table(name = "Evento")
-public class EventoModel {
+@Entity(name = "Evento")
+public class EventoModel implements Serializable {
+
+	private static final long serialVersionUID = 1859564144944272752L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
 	private ZonedDateTime dthInicio;
 	private ZonedDateTime dthFim;
 	@OneToOne
-	@JoinColumn(name = "jogador_id")
+	@JoinColumn(name = "jogadorId")
 	private JogadorModel donoEvento;
 	@OneToOne
-	@JoinColumn(name = "grupo_id")
+	@JoinColumn(name = "grupoId")
 	private GrupoModel grupo;
 	private String local;
 }

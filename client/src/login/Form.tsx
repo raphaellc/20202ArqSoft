@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 //todo: define profiles
-const apiHost:string = "http://localhost:8080/auth"
+const apiHost:string = "http://localhost:8080/jogador/login"
 
 function LoginButton() {
     return (
@@ -40,12 +40,11 @@ export default function Form() {
 
     const logIn = (event:SyntheticEvent)=>{
         event.preventDefault()
-        //body: JSON.stringify(value), 
-        fetch(apiHost, {method: "GET", headers: {"Content-type": "application/json; charset=UTF-8"} })
+        fetch(apiHost, {method: "POST", body: JSON.stringify(value), headers: {"Content-type": "application/json; charset=UTF-8"} })
         .then((res)=>res.json())
         .then((res:CredentialsResponse)=>{
-            if(!!res && !!res.authorized){
-                history.push(`/home/${res.userId}`)
+            if(!!res && !!res.autorizado){
+                history.push(`/home/${res.id}`)
             } else {
                 console.log("unauthorized")
                 console.log(res)
