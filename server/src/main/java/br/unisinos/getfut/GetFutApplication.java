@@ -1,18 +1,9 @@
-package br.unisinos.getfut.app;
-
-import java.time.ZonedDateTime;
+package br.unisinos.getfut;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-
-import br.unisinos.getfut.modelo.JogadorModel;
-import br.unisinos.getfut.repositorios.JogadorRepository;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication()
 public class GetFutApplication {
