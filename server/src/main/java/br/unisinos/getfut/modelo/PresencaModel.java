@@ -3,6 +3,7 @@ package br.unisinos.getfut.modelo;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 
+import br.unisinos.getfut.enums.PosicaoEnum;
 import br.unisinos.getfut.modelo.id.PresencaId;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -21,6 +22,6 @@ public class PresencaModel {
 
 	@EmbeddedId
 	private PresencaId id;
-	private int codPosicao;
+	private PosicaoEnum posicao;
 
 }

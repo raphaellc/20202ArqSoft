@@ -1,11 +1,14 @@
 package br.unisinos.getfut.service;
 
+import java.util.Objects;
+
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import br.unisinos.getfut.modelo.JogadorAuth;
 import br.unisinos.getfut.modelo.JogadorModel;
 import br.unisinos.getfut.repositorios.JogadorRepository;
 
@@ -29,6 +32,18 @@ public class JogadorService {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "E-mail já está cadastrado no sistema.");
 		}
 		return jogadorRepository.save(JogadorModel.builder().nome(nome).email(email).senha(senha).build());
+	}
+
+	public JogadorAuth verificarUsuario(JogadorModel jogador) {
+		JogadorModel jogadorReturn = jogadorRepository.findByEmailAndSenha(jogador.getEmail(), jogador.getSenha());
+		if (Objects.nonNull(jogadorReturn)) {
+			return JogadorAuth.builder().id(jogadorReturn.getId()).autorizado(Boolean.TRUE).build();
+		}
+		return JogadorAuth.builder().autorizado(Boolean.FALSE).build();
+	}
+
+	public JogadorModel buscarPorId(Long id) {
+		return jogadorRepository.findById(id).orElse(null);
 	}
 
 }
