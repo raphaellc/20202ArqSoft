@@ -5,8 +5,8 @@ import EventsContainer from './EventsContainer'
 import Event from '../models/Evento'
 
 const getUserById = "http://localhost:8080/jogador?id="
-const getEventsByPresenceUserId = "http://localhost:8080/eventos?id="
-const getEventsByPresenceUserIdReal = "http://localhost:8080/events?donoEvento="
+const getEventsByPresenceUserId = "http://localhost:8080/evento?id="
+const getEventsByPresenceUserIdReal = "http://localhost:8080/evento?idDonoEvento="
 
 function HomeTitle({events}: any) {
     return (
@@ -41,7 +41,7 @@ export default function Home() {
             console.log(err)
         })
         
-        fetch(getEventsByPresenceUserId + userId,{method: "GET"})
+        fetch(getEventsByPresenceUserIdReal + userId,{method: "GET"})
         .then(res=>res.json())
         .then((res:Event[])=>{
             console.log("Events found: ")
