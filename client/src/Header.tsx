@@ -19,8 +19,8 @@ function Menu() {
 
     return (
         <div style={{display: "flex", flexDirection: "row", padding: 10}}>
-            <div style={{padding: 10}} onClick={expandMenu}><img src={menu} style={{heigth:40, width:40}}/></div>
-            <div style={{padding: 10}} onClick={expandUserOptions}><img src={userIcon} style={{heigth:40, width:40}}/></div>
+            <div className="header-icons" onClick={expandMenu}><img src={menu} /></div>
+            <div className="header-icons" onClick={expandUserOptions}><img src={userIcon}/></div>
         </div>)
 }
 

@@ -118,3 +118,13 @@ and (max-device-width: 480px) {
   justify-content: space-between;
   background-color: #cef2e7;
 }
+
+.header-icons {
+  padding: 10px;
+  height:40px; 
+  width:40px;
+}
+
+.header-icons:hover {
+  cursor: pointer; 
+}

@@ -34,7 +34,7 @@ function RegisterButton() {
 
 
 export default function Form() {
-    const [value, setValue] = useState<CredentialsRequest>({email:"", password: ""})
+    const [value, setValue] = useState<CredentialsRequest>({email:"", senha: ""})
     const history = useHistory();
 
 
@@ -48,12 +48,13 @@ export default function Form() {
             } else {
                 console.log("unauthorized")
                 console.log(res)
+                history.push("/unauthorized")
                 //TODO: setup modal
             }
         })
         .catch((err)=>{
             console.log("unauthorized. Error: " + err)
-            history.push("/home")
+            history.push("/unauthorized")
         })
     }
 
@@ -71,7 +72,7 @@ export default function Form() {
             
             <div className="login-field">
                 <label htmlFor ="password" className="login-field-label">Password:</label>
-                <input id="password" type="password" name="password" required value={value.password} onChange={handleChange} className="login-field-input"/>
+                <input id="password" type="password" name="senha" required value={value.senha} onChange={handleChange} className="login-field-input"/>
             </div>
             
             <LoginButton/>
