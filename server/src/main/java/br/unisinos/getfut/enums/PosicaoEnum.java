@@ -8,12 +8,12 @@ import lombok.Getter;
 @Getter
 public enum PosicaoEnum {
 	
-	GOLEIRO(1, "Goleiro"),
-	LATERAL(2, "Lateral"),
-	ZAGUEIRO(3, "Zagueiro"),
-	VOLANTE(4, "Volante"),
-	MEIA(5, "Meia"),
-	ATACANTE(6, "Atacante");
+	GOLEIRO(0, "Goleiro"),
+	LATERAL(1, "Lateral"),
+	ZAGUEIRO(2, "Zagueiro"),
+	VOLANTE(3, "Volante"),
+	MEIA(4, "Meia"),
+	ATACANTE(5, "Atacante");
 	
 	private Integer codigo;
 	private String descricao;

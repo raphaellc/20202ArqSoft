@@ -48,7 +48,7 @@ export default function RegistrationForm() {
     .then((res)=>res.json())
     .then((res:User)=>{
             console.log("User registered succesfully")
-            history.push(`/login`)
+            history.push(`/`)
     })
     .catch((err)=>{
         console.log("User not registered. Error: " + err)
