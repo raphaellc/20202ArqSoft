@@ -8,7 +8,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import br.unisinos.getfut.modelo.JogadorAuth;
+import br.unisinos.getfut.converter.JogadorAuthConverter;
+import br.unisinos.getfut.converter.JogadorDTOConverter;
+import br.unisinos.getfut.dto.JogadorAuth;
+import br.unisinos.getfut.dto.JogadorDTO;
 import br.unisinos.getfut.modelo.JogadorModel;
 import br.unisinos.getfut.repositorios.JogadorRepository;
 
@@ -23,7 +26,7 @@ public class JogadorService {
 		this.jogadorRepository = jogadorRepository;
 	}
 
-	public JogadorModel incluir(String email, String nome, String senha) {
+	public JogadorDTO incluir(String email, String nome, String senha) {
 		if (StringUtils.isBlank(email) || StringUtils.isBlank(nome) || StringUtils.isBlank(senha)) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "E-mail, nome e senha devem ser informados.");
 		}
@@ -31,19 +34,21 @@ public class JogadorService {
 		if (jaCadastrado) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "E-mail já está cadastrado no sistema.");
 		}
-		return jogadorRepository.save(JogadorModel.builder().nome(nome).email(email).senha(senha).build());
+		return JogadorDTOConverter.toDTO(
+				jogadorRepository.save(
+						JogadorModel.builder().nome(nome).email(email).senha(senha).build()));
 	}
 
-	public JogadorAuth verificarUsuario(JogadorModel jogador) {
+	public JogadorAuth verificarUsuario(JogadorDTO jogador) {
 		JogadorModel jogadorReturn = jogadorRepository.findByEmailAndSenha(jogador.getEmail(), jogador.getSenha());
 		if (Objects.nonNull(jogadorReturn)) {
-			return JogadorAuth.builder().id(jogadorReturn.getId()).autorizado(Boolean.TRUE).build();
+			return JogadorAuthConverter.criarAutorizado(jogadorReturn);
 		}
-		return JogadorAuth.builder().autorizado(Boolean.FALSE).build();
+		return JogadorAuthConverter.criarNaoAutorizado();
 	}
 
-	public JogadorModel buscarPorId(Long id) {
-		return jogadorRepository.findById(id).orElse(null);
+	public JogadorDTO buscarPorId(Long id) {
+		return JogadorDTOConverter.toDTO(jogadorRepository.findById(id).orElse(null));
 	}
 
 }

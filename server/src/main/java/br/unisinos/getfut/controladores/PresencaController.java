@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.unisinos.getfut.converter.PresencaDTOConverter;
+import br.unisinos.getfut.dto.PresencaDTO;
 import br.unisinos.getfut.enums.PosicaoEnum;
-import br.unisinos.getfut.modelo.PresencaModel;
 import br.unisinos.getfut.service.PresencaService;
 
 @RequestMapping("/presenca")
@@ -19,7 +20,7 @@ public class PresencaController {
 	private PresencaService presencaService;
 
 	@PostMapping
-	public PresencaModel confirmarPresenca(@RequestParam("idJogador") Long idJogador,
+	public PresencaDTO confirmarPresenca(@RequestParam("idJogador") Long idJogador,
 			@RequestParam("idEvento") Long idEvento, @RequestParam(required = false) PosicaoEnum posicao) {
 		return presencaService.salvarPresenca(idJogador, idEvento, posicao);
 	}

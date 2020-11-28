@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.unisinos.getfut.modelo.JogadorAuth;
-import br.unisinos.getfut.modelo.JogadorModel;
+import br.unisinos.getfut.dto.JogadorAuth;
+import br.unisinos.getfut.dto.JogadorDTO;
 import br.unisinos.getfut.service.JogadorService;
 
 @RequestMapping("/jogador")
@@ -20,17 +20,17 @@ public class JogadorController {
 	private JogadorService jogadorService;
 
 	@GetMapping
-	public JogadorModel buscarPorId(@RequestParam("id") Long id) {
+	public JogadorDTO buscarPorId(@RequestParam("id") Long id) {
 		return jogadorService.buscarPorId(id);
 	}
 
 	@PostMapping
-	public JogadorModel incluirConta(@RequestBody() JogadorModel jogador) {
+	public JogadorDTO incluirConta(@RequestBody() JogadorDTO jogador) {
 		return jogadorService.incluir(jogador.getEmail(), jogador.getNome(), jogador.getSenha());
 	}
 
 	@PostMapping("/login")
-	public JogadorAuth autorizarConta(@RequestBody() JogadorModel jogador) {
+	public JogadorAuth autorizarConta(@RequestBody() JogadorDTO jogador) {
 		return jogadorService.verificarUsuario(jogador);
 	}
 
