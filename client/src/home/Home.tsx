@@ -5,13 +5,12 @@ import EventsContainer from './EventsContainer'
 import Event from '../models/Evento'
 
 const getUserById = "http://localhost:8080/jogador?id="
-const getEventsByPresenceUserId = "http://localhost:8080/evento?id="
 const getEventsByPresenceUserIdReal = "http://localhost:8080/evento?idDonoEvento="
 
-function HomeTitle({events}: any) {
+function HomeTitle({events, user}: any) {
     return (
         <div style={{textAlign: "left", margin: "0px 30px"}}>
-            <h3 style={{fontFamily: "Segoe UI, sans-serif"}}>{events.length > 0 ? "Seus próximos eventos" : "Nenhum evento marcado"}</h3>
+            <h3 style={{fontFamily: "Segoe UI, sans-serif"}}>{events.length > 0 ? `Olá, ${user.nome}! Veja seus próximos eventos` : "Nenhum evento marcado"}</h3>
         </div>
     )
 }
@@ -56,7 +55,7 @@ export default function Home() {
 
     return (
         <div style={{display: "flex", backgroundColor:"#cef2e7", flexDirection: "column"}}>
-            <HomeTitle events={events}/>
+            <HomeTitle events={events} user={loggedUser}/>
             <div className="left-aligned-container" style={{backgroundColor:"#cef2e7"}}>
                 <EventsContainer events={events}/>
             </div>

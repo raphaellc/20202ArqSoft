@@ -1,8 +1,8 @@
 export default interface User {
     id?:number,
-    nome:string,
-    email: string,
+    nome?:string,
+    email?: string,
     senha?:string,
-    dataNascimento:any,
-    codPosicao:number
+    dataNascimento?:any,
+    codPosicao?:number
 }

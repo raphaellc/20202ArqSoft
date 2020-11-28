@@ -1,6 +1,8 @@
 import * as React from 'react';
 import './Registration.css';
 import User from '../models/Jogador'
+import EventoRequest from '../models/EventoRequest'
+import mockedEventsCreation from '../models/mockedEventsCreation'
 import { SyntheticEvent, useState } from 'react';
 import '../login/Login.css'
 import './Registration.css'
@@ -10,6 +12,8 @@ import { useHistory } from "react-router-dom";
 
 //todo: define profiles
 const apiHost:string = "http://localhost:8080/jogador"
+const eventosMockados:string = "http://localhost:8080/evento"
+
 
 
 function RegisterButton() {
@@ -48,7 +52,19 @@ export default function RegistrationForm() {
     .then((res)=>res.json())
     .then((res:User)=>{
             console.log("User registered succesfully")
-            history.push(`/`)
+            return Promise.all
+            ([fetch(eventosMockados, {method: "POST", body: JSON.stringify(mockedEventsCreation[0]), headers: {"Content-type": "application/json; charset=UTF-8"} }),
+            fetch(eventosMockados, {method: "POST", body: JSON.stringify(mockedEventsCreation[1]), headers: {"Content-type": "application/json; charset=UTF-8"} }),
+            fetch(eventosMockados, {method: "POST", body: JSON.stringify(mockedEventsCreation[2]), headers: {"Content-type": "application/json; charset=UTF-8"} }),
+            fetch(eventosMockados, {method: "POST", body: JSON.stringify(mockedEventsCreation[3]), headers: {"Content-type": "application/json; charset=UTF-8"} }),
+            fetch(eventosMockados, {method: "POST", body: JSON.stringify(mockedEventsCreation[4]), headers: {"Content-type": "application/json; charset=UTF-8"} }),
+            fetch(eventosMockados, {method: "POST", body: JSON.stringify(mockedEventsCreation[5]), headers: {"Content-type": "application/json; charset=UTF-8"} })
+            ])
+    })
+    .then(([res1, res2, res3,res4,res5,res6])=>Promise.resolve([res1.json(),res2.json(), res3.json(),res4.json(),res5.json(),res6.json()]))
+    .then((res)=>{
+      console.log("mocked events created")
+      history.push(`/`)
     })
     .catch((err)=>{
         console.log("User not registered. Error: " + err)
