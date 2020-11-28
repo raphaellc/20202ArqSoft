@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.unisinos.getfut.modelo.EventoModel;
+import br.unisinos.getfut.dto.EventoDTO;
 import br.unisinos.getfut.service.EventoService;
 
 @RequestMapping("/evento")
@@ -21,17 +21,17 @@ public class EventoController {
 	private EventoService eventoService;
 
 	@GetMapping
-	public List<EventoModel> buscarPorDono(@RequestParam("idDonoEvento") Long idDonoEvento) {
+	public List<EventoDTO> buscarPorDono(@RequestParam("idDonoEvento") Long idDonoEvento) {
 		return eventoService.buscarPorIdDonoEvento(idDonoEvento);
 	}
 
 	@PostMapping
-	public EventoModel criarEvento(@RequestBody() EventoModel evento) {
+	public EventoDTO criarEvento(@RequestBody() EventoDTO evento) {
 		return eventoService.criarEvento(evento);
 	}
 
 	@GetMapping("/todos")
-	public List<EventoModel> listarEventos() {
+	public List<EventoDTO> listarEventos() {
 		return eventoService.listarEventos();
 	}
 
