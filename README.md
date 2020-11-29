@@ -1,13 +1,10 @@
 # ArqSoft
 
 Iniciando client:
-1. cd /client
-2. npm install
-3. npm start
-
-Mockando API:
-1. cd /client
-2. npx json-server ./src/mock-server.json --port 8080
+1. requer Node.js instalado na máquina 
+2. cd /client
+3. npm install
+4. npm start
 
 
 ![alt tag](home.png "login")
